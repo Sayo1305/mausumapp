@@ -40,79 +40,93 @@ const RightSidedata = () => {
   }, [lat, long]);
 
   return (
-    <div className="w-full flex flex-wrap gap-3 h-full justify-center">
+    <div className="container w-full flex flex-wrap gap-3 h-full justify-center">
       {clicked === true && start === true ? (
         <>
           <div
             onClick={() => {
               get_hour_data(0);
             }}
-            className="flex flex-col gap-2 p-3 justify-center items-center w-[300px]  h-[300px] bg-metal text-white rounded"
+            className=" box"
           >
-            <img
-              className="w-[100px] h-[100px]"
-              src={ThreeDay.forecast.forecastday[0].day.condition.icon}
-              alt=""
-            />
-            <div className="text-4xl font-semibold">
-              {ThreeDay.forecast.forecastday[0].day.maxtemp_c}
-              <span className="text-bubble-gum text-2xl">°C</span> |{" "}
-              {ThreeDay.forecast.forecastday[0].day.mintemp_c}
-              <span className="text-bubble-gum text-2xl">°C</span>
-            </div>
-            <div className="text-xl font-semibold text-bermuda">
-              {ThreeDay.forecast.forecastday[0].date}
-            </div>
-            <div className="text-bg font-semibold text-bermuda">Today</div>
+              <span></span>
+              <div className="content">
+                <img
+                  className="w-[100px] h-[100px]"
+                  src={ThreeDay.forecast.forecastday[0].day.condition.icon}
+                  alt=""
+                />
+                <div className="text-4xl font-semibold">
+                  {ThreeDay.forecast.forecastday[0].day.maxtemp_c}
+                  <span className="text-bubble-gum text-2xl">°C</span> |{" "}
+                  {ThreeDay.forecast.forecastday[0].day.mintemp_c}
+                  <span className="text-bubble-gum text-2xl">°C</span>
+                </div>
+                <div className="text-xl font-semibold text-bermuda">
+                  {ThreeDay.forecast.forecastday[0].date}
+                </div>
+                <div className="text-bg font-semibold text-bermuda">Today</div>
+              </div>
           </div>
           <div
             onClick={() => {
               get_hour_data(1);
             }}
-            className="flex flex-col gap-2 p-3 justify-center items-center w-[300px]  h-[300px] bg-metal text-white rounded"
+            className="box "
           >
-            <img
-              className="w-[100px] h-[100px]"
-              src={ThreeDay.forecast.forecastday[1].day.condition.icon}
-              alt=""
-            />
-            <div className="text-4xl font-semibold">
-              {ThreeDay.forecast.forecastday[1].day.maxtemp_c}
-              <span className="text-bubble-gum text-2xl">°C</span> |{" "}
-              {ThreeDay.forecast.forecastday[0].day.mintemp_c}
-              <span className="text-bubble-gum text-2xl">°C</span>
-            </div>
-            <div className="text-xl font-semibold text-bermuda">
-              {ThreeDay.forecast.forecastday[1].date}
-            </div>
-            <div className="text-bg font-semibold text-bermuda">Tommorow</div>
+              <span></span>
+              <div className="content">
+                <img
+                  className="w-[100px] h-[100px]"
+                  src={ThreeDay.forecast.forecastday[1].day.condition.icon}
+                  alt=""
+                />
+                <div className="text-4xl font-semibold">
+                  {ThreeDay.forecast.forecastday[1].day.maxtemp_c}
+                  <span className="text-bubble-gum text-2xl">°C</span> |{" "}
+                  {ThreeDay.forecast.forecastday[1].day.mintemp_c}
+                  <span className="text-bubble-gum text-2xl">°C</span>
+                </div>
+                <div className="text-xl font-semibold text-bermuda">
+                  {ThreeDay.forecast.forecastday[1].date}
+                </div>
+                <div className="text-bg font-semibold text-bermuda">Today</div>
+              </div>
           </div>
           <div
             onClick={() => {
               get_hour_data(2);
             }}
-            className="flex flex-col gap-2 p-3 justify-center items-center w-[300px]  h-[300px] bg-metal text-white rounded"
+            className="box "
           >
-            <img
-              className="w-[100px] h-[100px]"
-              src={ThreeDay.forecast.forecastday[2].day.condition.icon}
-              alt=""
-            />
-            <div className="text-4xl font-semibold">
-              {ThreeDay.forecast.forecastday[2].day.maxtemp_c}
-              <span className="text-bubble-gum text-2xl">°C</span> |{" "}
-              {ThreeDay.forecast.forecastday[0].day.mintemp_c}
-              <span className="text-bubble-gum text-2xl">°C</span>
-            </div>
-            <div className="text-xl font-semibold text-bermuda">
-              {ThreeDay.forecast.forecastday[2].date}
-            </div>
-            <div className="text-bg font-semibold text-bermuda">
-              Day after Tommorow
+            <div className="">
+              <span></span>
+              <div className="content">
+                <img
+                  className="w-[100px] h-[100px]"
+                  src={ThreeDay.forecast.forecastday[2].day.condition.icon}
+                  alt=""
+                />
+                <div className="text-4xl font-semibold">
+                  {ThreeDay.forecast.forecastday[2].day.maxtemp_c}
+                  <span className="text-bubble-gum text-2xl">°C</span> |{" "}
+                  {ThreeDay.forecast.forecastday[2].day.mintemp_c}
+                  <span className="text-bubble-gum text-2xl">°C</span>
+                </div>
+                <div className="text-xl font-semibold text-bermuda">
+                  {ThreeDay.forecast.forecastday[2].date}
+                </div>
+                <div className="text-bg font-semibold text-bermuda">Today</div>
+              </div>
             </div>
           </div>
         </>
-      ) : null}
+      ) : (
+        <div>
+          <div class="neon text-center">Get realtime</div>
+          <div class="flux text-center">weather for your place</div>
+        </div>
+      )}
     </div>
   );
 };

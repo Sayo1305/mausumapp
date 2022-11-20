@@ -42,7 +42,10 @@ const LeftSidedata = () => {
             last updated: {data.current.last_updated}
           </div>
         </div>
-      ) : null}
+      ) : <div className="text-white neonText font-semibold flex items-center justify-center text-7xl text-center w-full mx-0 h-[60vh] my-auto">
+        mausum app
+      </div>
+      }
     </div>
   );
 };

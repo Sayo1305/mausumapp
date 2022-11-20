@@ -59,13 +59,16 @@ const SearchBar = () => {
   return (
     <>
       <div className="relative w-1/2">
-        <input
-          value={clicked === true ? "" : search}
-          type={"text"}
-          placeholder="Search"
-          onChange={handle_search}
-          className="outline-none w-full p-2 rounded-md bg-metal text-bubble-gum "
-        />
+        <div className="relative group">
+          <input
+            value={clicked === true ? "" : search}
+            type={"text"}
+            placeholder="Search"
+            onChange={handle_search}
+            className="outline-none w-full z-20 p-2  text-white bg-metal rounded-lg "
+          />
+        </div>
+
         <div className="absolute w-full">
           <div className="w-full my-1  flex flex-col gap-1">
             {data.length !== 0 && clicked === false
