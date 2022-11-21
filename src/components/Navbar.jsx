@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SetApiData, Setclicked, SetLatitude, SetLongitude, Setstart } from "../store/Slicers/ApiData";
 import SearchBar from "./SearchBar";
-
+import configuredata from "../assets/data/data";
 const Navbar = () => {
   const dispatch = useDispatch();
   const [lat, setLat] = useState(28.5922);
@@ -17,7 +17,7 @@ const Navbar = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "74515798fbmshe0dba6869dec757p1d1ad6jsn2cea12992d1a",
+        "X-RapidAPI-Key": `${configuredata.apikey}`,
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
       },
     };
@@ -43,7 +43,7 @@ const Navbar = () => {
         width="16"
         height="16"
         fill="currentColor"
-        className="bi bi-geo-alt-fill text-white "
+        className="cursor-pointer bi bi-geo-alt-fill text-white "
         viewBox="0 0 16 16"
       >
         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />

@@ -5,6 +5,7 @@ import {
   SetLatitude,
   SetLongitude,
 } from "../store/Slicers/ApiData";
+import configuredata from "../assets/data/data";
 const SearchBar = () => {
   const [search, setsearch] = useState("");
   const [data, setdata] = useState([]);
@@ -19,7 +20,7 @@ const SearchBar = () => {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "74515798fbmshe0dba6869dec757p1d1ad6jsn2cea12992d1a",
+            `${configuredata.apikey}`,
           "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         },
       };
@@ -43,7 +44,7 @@ const SearchBar = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "74515798fbmshe0dba6869dec757p1d1ad6jsn2cea12992d1a",
+        "X-RapidAPI-Key": `${configuredata.apikey}`,
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
       },
     };

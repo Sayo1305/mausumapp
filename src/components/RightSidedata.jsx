@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SetHourdata, SetThreedaydata } from "../store/Slicers/ApiData";
 import { useNavigate } from "react-router-dom";
+import configuredata from "../assets/data/data";
 const RightSidedata = () => {
   const lat = useSelector((state) => state.Data.lat);
   const long = useSelector((state) => state.Data.long);
@@ -22,7 +23,7 @@ const RightSidedata = () => {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "74515798fbmshe0dba6869dec757p1d1ad6jsn2cea12992d1a",
+            `${configuredata.apikey}`,
           "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         },
       };
@@ -47,7 +48,7 @@ const RightSidedata = () => {
             onClick={() => {
               get_hour_data(0);
             }}
-            className=" box"
+            className=" box  cursor-pointer"
           >
               <span></span>
               <div className="content">
@@ -62,17 +63,17 @@ const RightSidedata = () => {
                   {ThreeDay.forecast.forecastday[0].day.mintemp_c}
                   <span className="text-bubble-gum text-2xl">°C</span>
                 </div>
-                <div className="text-xl font-semibold text-bermuda">
+                <div className="text-xl font-semibold text-black">
                   {ThreeDay.forecast.forecastday[0].date}
                 </div>
-                <div className="text-bg font-semibold text-bermuda">Today</div>
+                <div className="text-bg font-semibold text-black">Today</div>
               </div>
           </div>
           <div
             onClick={() => {
               get_hour_data(1);
             }}
-            className="box "
+            className="box cursor-pointer"
           >
               <span></span>
               <div className="content">
@@ -87,17 +88,17 @@ const RightSidedata = () => {
                   {ThreeDay.forecast.forecastday[1].day.mintemp_c}
                   <span className="text-bubble-gum text-2xl">°C</span>
                 </div>
-                <div className="text-xl font-semibold text-bermuda">
+                <div className="text-xl font-semibold text-black">
                   {ThreeDay.forecast.forecastday[1].date}
                 </div>
-                <div className="text-bg font-semibold text-bermuda">Today</div>
+                <div className="text-bg font-semibold text-black">Tommorow</div>
               </div>
           </div>
           <div
             onClick={() => {
               get_hour_data(2);
             }}
-            className="box "
+            className="box cursor-pointer"
           >
             <div className="">
               <span></span>
@@ -113,10 +114,10 @@ const RightSidedata = () => {
                   {ThreeDay.forecast.forecastday[2].day.mintemp_c}
                   <span className="text-bubble-gum text-2xl">°C</span>
                 </div>
-                <div className="text-xl font-semibold text-bermuda">
+                <div className="text-xl font-semibold text-black">
                   {ThreeDay.forecast.forecastday[2].date}
                 </div>
-                <div className="text-bg font-semibold text-bermuda">Today</div>
+                <div className="text-bg font-semibold text-black">Day after Tommorow</div>
               </div>
             </div>
           </div>
@@ -124,7 +125,7 @@ const RightSidedata = () => {
       ) : (
         <div>
           <div class="neon text-center">Get realtime</div>
-          <div class="flux text-center">weather for your place</div>
+          <div class="flux text-center">Data of your place</div>
         </div>
       )}
     </div>

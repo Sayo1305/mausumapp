@@ -23,7 +23,7 @@ const LeftSidedata = () => {
             }
             alt="djd"
           />
-          <div className="flex items-center justify-center  text-center w-full text-white">
+          <div className=" items-center justify-center  text-center w-full text-white">
             <div className="text-8xl font-semibold">
               {data.current.feelslike_c}
             </div>
@@ -43,7 +43,7 @@ const LeftSidedata = () => {
           </div>
         </div>
       ) : <div className="text-white neonText font-semibold flex items-center justify-center text-7xl text-center w-full mx-0 h-[60vh] my-auto">
-        mausum app
+        weather app
       </div>
       }
     </div>

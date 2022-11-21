@@ -16,7 +16,7 @@ const DayShedule = () => {
     <div>
     { clicked === true  && start === true? (
     <div className='bg-blue-sp-dark w-full p-3 h-screen  relative'>
-    <div onClick={handle_back} className='absolute top-2 right-2 p-2 bg-bubble-gum rounded-md text-center font-semibold'>Back</div>
+    <div onClick={handle_back} className='cursor-pointer absolute top-2 right-2 p-2 bg-bubble-gum rounded-md text-center font-semibold'>Back</div>
     <div>
     <div className="flex  flex-col justify-center gap-2 items-center">
           <img
