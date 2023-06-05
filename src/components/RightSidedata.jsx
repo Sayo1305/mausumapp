@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SetHourdata, SetThreedaydata } from "../store/Slicers/ApiData";
 import { useNavigate } from "react-router-dom";
-import configuredata from "../assets/data/data";
 const RightSidedata = () => {
   const lat = useSelector((state) => state.Data.lat);
   const long = useSelector((state) => state.Data.long);
@@ -23,7 +22,7 @@ const RightSidedata = () => {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            `${configuredata.apikey}`,
+            `${process.env.REACT_APP_API_KEY}`,
           "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         },
       };

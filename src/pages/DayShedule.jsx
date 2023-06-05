@@ -15,12 +15,12 @@ const DayShedule = () => {
   return (
     <div>
     { clicked === true  && start === true? (
-    <div className='bg-blue-sp-dark w-full p-3 h-screen  relative'>
+    <div className='bg-blue-sp-dark w-full p-3 min-h-screen  relative'>
     <div onClick={handle_back} className='cursor-pointer absolute top-2 right-2 p-2 bg-bubble-gum rounded-md text-center font-semibold'>Back</div>
     <div>
     <div className="flex  flex-col justify-center gap-2 items-center">
           <img
-            className="w-1/4  object-cover object-center text-center"
+            className="w-1/4 object-cover object-center text-center"
             src={
               apidata.current.condition.text === "Mist"
                 ? HCloud
@@ -52,11 +52,11 @@ const DayShedule = () => {
           </div>
         </div>
     </div>
-    <div className='text-white  flex gap-2 overflow-x-scroll  mx-auto my-0 py-2'>
+    <div className='text-white  flex md:flex-wrap md:flex-row gap-2 flex-col items-center mx-auto my-0 py-2'>
       {Data.map( (mp , idx)=>(
-        <div key={idx} className='w-[100px] h-[150px] flex flex-col p-3 rounded-lg bg-purple justify-between'>
+        <div key={idx} className='md:w-[100px] w-full h-[150px] items-center flex flex-col p-3 rounded-lg bg-purple justify-between'>
           <img className='w-[50px] h-[50px]' src={mp.condition.icon} alt="icon" />
-          <div className='text-sm'>{mp.feelslike_c}°C</div>
+          <div className='text-3xl md:text-lg font-semibold'>{mp.feelslike_c}°C</div>
           <div className='text-sm'>{(idx <=9) ? (`0${idx}.00`) : (`${idx}.00`)}</div>
         </div>
       ))}

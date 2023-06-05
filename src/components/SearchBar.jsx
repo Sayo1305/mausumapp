@@ -5,7 +5,6 @@ import {
   SetLatitude,
   SetLongitude,
 } from "../store/Slicers/ApiData";
-import configuredata from "../assets/data/data";
 const SearchBar = () => {
   const [search, setsearch] = useState("");
   const [data, setdata] = useState([]);
@@ -20,7 +19,7 @@ const SearchBar = () => {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            `${configuredata.apikey}`,
+            `${process.env.REACT_APP_API_KEY}`,
           "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         },
       };
@@ -44,7 +43,7 @@ const SearchBar = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": `${configuredata.apikey}`,
+        "X-RapidAPI-Key": `${process.env.REACT_APP_API_KEY}`,
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
       },
     };
@@ -59,7 +58,7 @@ const SearchBar = () => {
   };
   return (
     <>
-      <div className="relative w-1/2">
+      <div className="relative md:w-5/6 w-full">
         <div className="relative group">
           <input
             value={clicked === true ? "" : search}
